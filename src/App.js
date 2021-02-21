@@ -1,8 +1,8 @@
-import "./App.css";
+//Imports user generator
 import UserGenerator from "./components/UserGenerator";
 
 function App() {
-  return <UserGenerator></UserGenerator>;
+  return <UserGenerator />;
 }
 
 export default App;

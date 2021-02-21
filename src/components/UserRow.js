@@ -1,5 +1,6 @@
 import React from "react";
 
+//Stateless component to generate table rows
 const UserRow = (props) => {
   return (
     <tr>
