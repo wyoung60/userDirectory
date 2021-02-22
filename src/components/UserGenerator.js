@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from "react";
 import API from "../utils/API";
 import UsersContext from "../utils/UsersContext";
-import UserRowSetup from "./UserRowSetup";
+import Jumbotron from "./Jumbotron";
+import InputBar from "./InputBar";
+import Table from "./Table";
 
 //Function for export
 const UserGenerator = () => {
@@ -58,7 +60,11 @@ const UserGenerator = () => {
     });
 
     //Sets usersState to new sorted Array
-    setUsersState({ ...usersState, users: sortedState });
+    setUsersState({
+      ...usersState,
+      users: sortedState,
+      unchangedUserState: sortedState,
+    });
   };
 
   //Function for changes made in input bar
@@ -86,42 +92,9 @@ const UserGenerator = () => {
   return (
     <UsersContext.Provider value={usersState}>
       <div>
-        <div className="jumbotron">
-          <h1 className="display-4">Employee Directory</h1>
-          <p className="lead">
-            Click on name sort employees alphabetically or type a name into the
-            search bar.
-          </p>
-        </div>
-        <div className="input-group input-group-sm mb-3">
-          <div className="input-group-prepend">
-            <span className="input-group-text" id="inputGroup-sizing-sm">
-              Find Name
-            </span>
-          </div>
-          <input
-            type="text"
-            className="form-control"
-            aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm"
-            onChange={onChange}
-          />
-        </div>
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col" onClick={sortClick}>
-                Name
-              </th>
-              <th scope="col">Phone</th>
-              <th scope="col">Email</th>
-              <th scope="col">Image</th>
-            </tr>
-          </thead>
-          <tbody>
-            <UserRowSetup />
-          </tbody>
-        </table>
+        <Jumbotron />
+        <InputBar onChange={onChange} />
+        <Table onClick={sortClick} />
       </div>
     </UsersContext.Provider>
   );
