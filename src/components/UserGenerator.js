@@ -86,6 +86,13 @@ const UserGenerator = () => {
   return (
     <UsersContext.Provider value={usersState}>
       <div>
+        <div className="jumbotron">
+          <h1 className="display-4">Employee Directory</h1>
+          <p className="lead">
+            Click on name sort employees alphabetically or type a name into the
+            search bar.
+          </p>
+        </div>
         <div className="input-group input-group-sm mb-3">
           <div className="input-group-prepend">
             <span className="input-group-text" id="inputGroup-sizing-sm">
