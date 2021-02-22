@@ -1,6 +1,7 @@
 import React from "react";
 import UserRowSetup from "./UserRowSetup";
 
+//Component for bootstrap table.
 const Table = (props) => {
   return (
     <table className="table">

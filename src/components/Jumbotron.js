@@ -1,5 +1,6 @@
 import React from "react";
 
+//Component for bootstrap jumbotron.
 const Jumbotron = () => {
   return (
     <div className="jumbotron">

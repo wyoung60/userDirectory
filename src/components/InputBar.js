@@ -1,5 +1,6 @@
 import React from "react";
 
+//Component for bootstrap search bar.
 const InputBar = (props) => {
   return (
     <div className="input-group input-group-sm mb-3">
